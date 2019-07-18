@@ -55,11 +55,3 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 classifier.fit(X_train, y_train, batch_size = 10, epochs = 50)
 y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.50)
-
-############################test################
-########################Saving Model############
-classifier.save_weights('titanicmodel_rahul.h5')
-###################################yaml#########
-yaml_model = classifier.to_yaml()
-with open('titanic_model.yaml', 'w') as yaml_file:
-    yaml_file.write(yaml_model)
